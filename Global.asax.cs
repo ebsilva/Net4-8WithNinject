@@ -7,9 +7,9 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Net.Http;
 using System.Web.Http;
-using WebApplication3.App_Start;
+using Ebs.App_Start;
 
-namespace WebApplication3
+namespace Ebs
 {
     public class MvcApplication : System.Web.HttpApplication
     {

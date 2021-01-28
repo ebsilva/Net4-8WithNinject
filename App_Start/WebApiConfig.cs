@@ -5,7 +5,7 @@ using System.Web;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace WebApplication3.App_Start
+namespace Ebs.App_Start
 {
     public class WebApiConfig
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebApplication3.Entities;
+using Ebs.Entities;
 
-namespace WebApplication3.Interfaces
+namespace Ebs.Interfaces
 {
     public interface IRepository
     {

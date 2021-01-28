@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebApplication3.Entities;
-using WebApplication3.Interfaces;
+using Ebs.Entities;
+using Ebs.Interfaces;
 
-namespace WebApplication3.Data
+namespace Ebs.Data
 {
     public class Repository : IRepository
     {

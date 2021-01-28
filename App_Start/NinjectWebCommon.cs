@@ -1,7 +1,7 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(WebApplication3.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(WebApplication3.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Ebs.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Ebs.App_Start.NinjectWebCommon), "Stop")]
 
-namespace WebApplication3.App_Start
+namespace Ebs.App_Start
 {
     using System;
     using System.Web;
@@ -11,8 +11,9 @@ namespace WebApplication3.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Ninject.Web.Common.WebHost;
-    using WebApplication3.Data;
-    using WebApplication3.Interfaces;
+    using Ebs.Data;
+    using Ebs.Entities;
+    using Ebs.Interfaces;
 
     public static class NinjectWebCommon 
     {
@@ -48,6 +49,7 @@ namespace WebApplication3.App_Start
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
                 kernel.Bind<IRepository>().To<Repository>();
+                kernel.Bind<IRepositoryBase<People>>().To<RepositoryBase<People>>();
 
                 RegisterServices(kernel);
                 return kernel;

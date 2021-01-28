@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication3.Interfaces;
+using Ebs.Interfaces;
 
-namespace WebApplication3.Controllers
+namespace Ebs.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IRepository  _repo;
+        #region Constructor
+        private readonly IRepository _repo;
+        public HomeController(IRepository repo) => this._repo = repo;
+        #endregion
 
-        public HomeController(IRepository repo)
-        {
-            this._repo = repo;
-        }
+        #region Public Methods
         public ActionResult Index()
         {
             var p = _repo.ListPeople();
@@ -33,6 +33,7 @@ namespace WebApplication3.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
-        }
+        } 
+        #endregion
     }
 }
