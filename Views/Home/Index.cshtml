@@ -1,0 +1,13 @@
+﻿@using WebApplication3.Entities;
+@model IEnumerable<People>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    @foreach( var p in Model)
+    {
+        <div>@p.Nome</div>
+    }
+
+</div>
